@@ -1,0 +1,5 @@
+<CommunityApplications>
+  <Profile>Unraid Community Applications templates maintained by Dennis Weyel. This repository currently provides the CalTopo History container template. Application support and issue tracking are available through the CalTopo History GitHub project.</Profile>
+  <Icon>https://raw.githubusercontent.com/DWeyel/unraid-templates/main/icon.svg</Icon>
+  <WebPage>https://github.com/DWeyel/unraid-templates</WebPage>
+</CommunityApplications>

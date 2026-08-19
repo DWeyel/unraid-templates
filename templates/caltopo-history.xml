@@ -1,0 +1,31 @@
+<Container version="2">
+  <Name>CalTopo-History</Name>
+  <Repository>ghcr.io/dweyel/caltopo-history:latest</Repository>
+  <Registry>https://github.com/DWeyel/caltopo-history/pkgs/container/caltopo-history</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+
+  <Icon>https://raw.githubusercontent.com/DWeyel/unraid-templates/main/icon.png</Icon>
+  <WebUI>http://[IP]:[PORT:8765]</WebUI>
+
+  <Overview>Self-hosted backup, versioning, recovery and audit for CalTopo Team maps. CalTopo History keeps map snapshots and object history, provides diffs and restore workflows, and includes administrative controls and audit logging.</Overview>
+
+  <Project>https://github.com/DWeyel/caltopo-history</Project>
+  <TemplateURL>https://raw.githubusercontent.com/DWeyel/unraid-templates/main/templates/caltopo-history.xml</TemplateURL>
+  <ReadMe>https://raw.githubusercontent.com/DWeyel/unraid-templates/main/README.md</ReadMe>
+
+  <Category>Tools:System</Category>
+  <ExtraSearchTerms>caltopo maps gis backup history versioning restore audit</ExtraSearchTerms>
+  <Requires>Persistent /data storage is required. A CalTopo Team service account is required for CalTopo backup operations. The initial admin password is printed to the container log on first start.</Requires>
+  <Changes>Initial Unraid Community Applications template for CalTopo History 1.0.1 and later stable releases.</Changes>
+  <Date>2026-08-19</Date>
+  <License>AGPL-3.0-only</License>
+
+  <Config Name="WebUI Port" Target="8765" Default="8765" Mode="tcp" Description="HTTP port for the CalTopo History Web UI." Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="Appdata" Target="/data" Default="/mnt/user/appdata/caltopo-history" Mode="rw" Description="Persistent SQLite database, application secret and CalTopo History data. Do not remove this mapping." Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="COOKIE_SECURE" Target="COOKIE_SECURE" Default="false" Description="Secure session-cookie deployment fallback. Leave false for HTTP. Set true only when the browser-facing URL uses HTTPS. This can also be overridden in the application Settings UI." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Timezone" Target="TZ" Default="Europe/Berlin" Description="Container/application timezone." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="CalTopo Credential ID" Target="CALTOPO_CREDENTIAL_ID" Default="" Description="Optional CalTopo service-account Credential ID deployment fallback. Recommended: configure it in the application Settings UI after first login." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="CalTopo Credential Secret" Target="CALTOPO_CREDENTIAL_SECRET" Default="" Description="Optional CalTopo service-account Credential Secret deployment fallback. Recommended: configure it in the application Settings UI after first login." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+</Container>

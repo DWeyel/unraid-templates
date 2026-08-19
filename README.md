@@ -23,7 +23,7 @@ The repository follows the current Unraid Community Applications v2 template lay
 
 - `ca_profile.xml` — maintainer/repository profile
 - `templates/caltopo-history.xml` — CalTopo History Docker application template
-- `icon.svg` — repository and application icon
+- `icon.svg` / `icon.png` — repository and application icons
 
 After changes, validate and scan this repository through the Unraid Community Applications submission portal before submitting it for review.
 
